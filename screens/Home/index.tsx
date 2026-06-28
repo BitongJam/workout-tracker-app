@@ -1,9 +1,15 @@
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    
+      <SafeAreaView className="flex-1">
+        <Text className="text-foreground dark:text-white">
+          HomeScreen
+        </Text>
+      </SafeAreaView>
+
+
   )
 }
