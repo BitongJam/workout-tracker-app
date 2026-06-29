@@ -1,27 +1,47 @@
-import { Image } from '@/components/ui/image';
+import {
+  Avatar,
+  AvatarFallbackText,
+  AvatarImage
+} from '@/components/ui/avatar';
+import { Divider } from '@/components/ui/divider';
+import { Icon } from '@/components/ui/icon';
+import { Text } from '@/components/ui/text';
 import { VStack } from '@/components/ui/vstack';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { Settings } from 'lucide-react-native';
+
 
 export default function ProfileScreen() {
   return (
     <SafeAreaView className='flex-1'>
       <VStack space="xs" reversed={false}>
-        <Image className='self-center mt-5 mb-5'
-          size="xl"
-          source={{
-            uri: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          }}
-          alt="image"
-        />
 
-        <Text className='self-center font-bold text-xl '>
-          Full Name
-        </Text>
+        <View className='mt-10'>
+          <Avatar className='w-25 h-25 self-center'>
+            <AvatarFallbackText>Jane Doe is test</AvatarFallbackText>
+            <AvatarImage
+              source={{
+                uri: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+              }}
+            />
+          </Avatar>
+          <Text bold={true} className='self-center' size='lg'>
+            James Michael J. Ortiz
+          </Text>
+          <Text className='self-center' size='md' italic={true} >
+            Profile
+          </Text>
+        </View>
 
-        <Text>
-          Sub
-        </Text>
+        <View className='mt-10 px-7'>
+          <Divider className="" />
+          <View className='flex-row items-center gap-2'>
+            <Text>Acccount Info</Text>
+            <Icon as={Settings} size="lg" />
+          </View>
+        </View>
       </VStack>
     </SafeAreaView>
 
